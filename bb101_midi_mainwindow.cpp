@@ -54,33 +54,4 @@ void bB101_Midi_MainWindow::on_Reset_clicked()
     initVars();
 }
 
-void qSleep(int ms)
-{
-    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
-    nanosleep(&ts, NULL);
-}
 
-void bB101_Midi_MainWindow::on_DumpCurrentProgram_clicked()
-{
-    QMidiEvent event;
-    event.setMessage(0x80);
-    QByteArray sdata_dumpprog = QByteArray::fromHex("F0302300F7");
-    sysex_msg = "No RX";
-    MidiOut.sendSysEx(sdata_dumpprog);
-    qSleep(100);
-    if ( sysex_msg != "No RX" )
-        qDebug() << "received " << sysex_msg;
-}
-
-void bB101_Midi_MainWindow::on_IncrementProg_pushButton_clicked()
-{
-    if ( ui->lcdNumber->value() < 32)
-        ui->lcdNumber->display(ui->lcdNumber->value()+1);
-}
-
-
-void bB101_Midi_MainWindow::on_DecrementProg_pushButton_clicked()
-{
-    if ( ui->lcdNumber->value() > 0)
-        ui->lcdNumber->display(ui->lcdNumber->value()-1);
-}

@@ -279,7 +279,6 @@ void QMidiInternal::MidiInReceiveThread::run()
 					| (ev->data.note.channel & 0x0F)
 					| ((ev->data.note.note & 0x7F) << 8)
 					| ((ev->data.note.velocity & 0x7F) << 16);
-            qDebug() << "SND_SEQ_EVENT_NOTEOFF Emitted";
             break;
 		case SND_SEQ_EVENT_NOTEON:
 			data = 0x90

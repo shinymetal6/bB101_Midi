@@ -54,12 +54,23 @@ private slots:
 
     void on_Reset_clicked();
 
-    void on_DumpCurrentProgram_clicked();
+    void on_ReadCurrentProgram_clicked();
 
-    void on_IncrementProg_pushButton_clicked();
+    void on_IncrementReadProg_pushButton_clicked();
 
+    void on_DecrementReadProg_pushButton_clicked();
 
-    void on_DecrementProg_pushButton_clicked();
+    void on_IncrementSaveProg_pushButton_clicked();
+
+    void on_DecrementSaveProg_pushButton_clicked();
+
+    void on_ReadProgram_clicked();
+
+    void on_Cutoff_valueChanged(int value);
+
+    void on_Resonance_valueChanged(int value);
+
+    void on_Delay_valueChanged(int value);
 
 private:
     Ui::bB101_Midi_MainWindow *ui;

@@ -10,8 +10,11 @@ CONFIG += c++11
 include(MidiLib/QMidi.pri)
 
 SOURCES += \
+    delay.cpp \
     main.cpp \
     bb101_midi_mainwindow.cpp \
+    program_manager.cpp \
+    vcf.cpp \
     waveforms.cpp
 
 HEADERS += \

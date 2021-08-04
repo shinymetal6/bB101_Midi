@@ -46,6 +46,14 @@ QString PixMapName=":/Icons/sin.bmp";
     ui->DutyValue2->setText("5");
     ui->DutyValue3->setText("5");
     ui->DutyValue4->setText("5");
+    ui->VCFAP_radioButton->setChecked(true) ;
+    ui->VCFLP_radioButton->setChecked(false) ;
+    ui->VCFBP_radioButton->setChecked(false);
+    ui->VCFHP_radioButton->setChecked(false);
+    ui->CutoffValue->setText("0");
+    ui->ResonanceValue->setText("0");
+    ui->DelayValue->setText("0");
+
 }
 
 void bB101_Midi_MainWindow::on_pushButton_Wave1_clicked()
