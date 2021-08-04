@@ -60,7 +60,7 @@ void qSleep(int ms)
     nanosleep(&ts, NULL);
 }
 
-void bB101_Midi_MainWindow::on_Dump_clicked()
+void bB101_Midi_MainWindow::on_DumpCurrentProgram_clicked()
 {
     QMidiEvent event;
     event.setMessage(0x80);
@@ -72,3 +72,15 @@ void bB101_Midi_MainWindow::on_Dump_clicked()
         qDebug() << "received " << sysex_msg;
 }
 
+void bB101_Midi_MainWindow::on_IncrementProg_pushButton_clicked()
+{
+    if ( ui->lcdNumber->value() < 32)
+        ui->lcdNumber->display(ui->lcdNumber->value()+1);
+}
+
+
+void bB101_Midi_MainWindow::on_DecrementProg_pushButton_clicked()
+{
+    if ( ui->lcdNumber->value() > 0)
+        ui->lcdNumber->display(ui->lcdNumber->value()-1);
+}

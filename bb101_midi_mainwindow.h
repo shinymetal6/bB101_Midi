@@ -54,7 +54,12 @@ private slots:
 
     void on_Reset_clicked();
 
-    void on_Dump_clicked();
+    void on_DumpCurrentProgram_clicked();
+
+    void on_IncrementProg_pushButton_clicked();
+
+
+    void on_DecrementProg_pushButton_clicked();
 
 private:
     Ui::bB101_Midi_MainWindow *ui;
