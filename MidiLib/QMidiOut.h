@@ -31,8 +31,8 @@ public:
 	void pitchWheel(int voice, int value);
 	void channelAftertouch(int voice, int value);
 	void polyphonicAftertouch(int note, int voice, int value);
-	void controlChange(int voice, int number, int value);
-	void stopAll();
+    void controlChange( int control_number, int value);
+    void stopAll();
 	void stopAll(int voice);
 
 	bool isConnected() const { return fConnected; }

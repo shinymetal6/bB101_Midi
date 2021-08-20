@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui opengl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -10,10 +10,12 @@ CONFIG += c++11
 include(MidiLib/QMidi.pri)
 
 SOURCES += \
+    adsr.cpp \
     delay.cpp \
     main.cpp \
     bb101_midi_mainwindow.cpp \
     program_manager.cpp \
+    system.cpp \
     vcf.cpp \
     waveforms.cpp
 
@@ -29,4 +31,22 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    Fonts.qrc \
     Icons.qrc
+
+DISTFILES += \
+    Fonts/Bauhaus_.ttf \
+    Fonts/Directive Four Bold Italic.otf \
+    Fonts/Directive Four Bold.otf \
+    Fonts/Directive Four Condensed Bold Italic.otf \
+    Fonts/Directive Four Condensed Bold.otf \
+    Fonts/Directive Four Condensed Italic.otf \
+    Fonts/Directive Four Condensed.otf \
+    Fonts/Directive Four Italic.otf \
+    Fonts/Directive Four.otf \
+    Fonts/Godzilla.ttf \
+    Fonts/Mandala Bold Italic.otf \
+    Fonts/Mandala Bold.otf \
+    Fonts/Mandala Italic.otf \
+    Fonts/data-latin.ttf \
+    Fonts/data-unifon.ttf

@@ -82,3 +82,22 @@ void bB101_Midi_MainWindow::on_DecrementSaveProg_pushButton_clicked()
         ui->Save_lcdNumber->display(ui->Save_lcdNumber->value()-1);
 }
 
+
+void bB101_Midi_MainWindow::on_Erase_pushButton_clicked()
+{
+
+}
+
+
+void bB101_Midi_MainWindow::on_IncrementEraseProg_pushButton_clicked()
+{
+    if ( ui->Erase_lcdNumber->value() < 32)
+        ui->Erase_lcdNumber->display(ui->Erase_lcdNumber->value()+1);
+}
+
+void bB101_Midi_MainWindow::on_DecrementEraseProg_pushButton_clicked()
+{
+    if ( ui->Erase_lcdNumber->value() > 0)
+        ui->Erase_lcdNumber->display(ui->Erase_lcdNumber->value()-1);
+
+}

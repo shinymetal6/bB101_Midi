@@ -75,12 +75,12 @@ void QMidiOut::polyphonicAftertouch(int note, int voice, int value)
 	sendMsg(msg);
 }
 
-void QMidiOut::controlChange(int voice, int number, int value)
+void QMidiOut::controlChange(int control_number, int value)
 {
-	qint32 msg = 0xB0 + voice;
-	msg |= number << 8;
-	msg |= value << 16;
-	sendMsg(msg);
+    qint32 msg = 0xB0;
+    msg |= control_number << 8;
+    msg |= value << 16;
+    sendMsg(msg);
 }
 
 void QMidiOut::stopAll()

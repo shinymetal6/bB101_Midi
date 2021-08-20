@@ -22,3 +22,20 @@ void bB101_Midi_MainWindow::on_Delay_valueChanged(int value)
         MidiOut.sendSysEx(QByteArray::fromHex(sdata_vol));
         */
 }
+
+
+void bB101_Midi_MainWindow::on_Echo_radioButton_clicked()
+{
+    ui->Reverb_radioButton->setChecked(false);
+}
+
+
+void bB101_Midi_MainWindow::on_Reverb_radioButton_clicked()
+{
+    ui->Echo_radioButton->setChecked(false);
+}
+
+void bB101_Midi_MainWindow::on_Enable_checkBox_stateChanged(int arg1)
+{
+
+}

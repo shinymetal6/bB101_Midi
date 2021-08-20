@@ -1,39 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>Fonts/Directive-Four-Bold/Directive Four Bold Italic.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Bold.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Condensed Bold Italic.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Condensed Bold.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Condensed Italic.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Condensed.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four Italic.otf</file>
-        <file>Fonts/Directive-Four-Bold/Directive Four.otf</file>
-        <file>Fonts/Directive-Four-Bold/ffonts.net.htm</file>
-        <file>Fonts/Directive-Four-Bold/ffonts.net.txt</file>
-        <file>Fonts/Directive-Four-Bold/Font License.txt</file>
-        <file>Fonts/Directive-Four-Bold/install-a-new-font.txt</file>
-        <file>Fonts/Directive-Four-Bold/quick_tips.html</file>
-        <file>Fonts/Godzilla/ffonts.net.htm</file>
-        <file>Fonts/Godzilla/ffonts.net.txt</file>
-        <file>Fonts/Godzilla/Godzilla.ttf</file>
-        <file>Fonts/Godzilla/godzilla.txt</file>
-        <file>Fonts/Godzilla/install-a-new-font.txt</file>
-        <file>Fonts/Godzilla/quick_tips.html</file>
-        <file>Fonts/Mandala/ffonts.net.htm</file>
-        <file>Fonts/Mandala/ffonts.net.txt</file>
-        <file>Fonts/Mandala/install-a-new-font.txt</file>
-        <file>Fonts/Mandala/Mandala Bold Italic.otf</file>
-        <file>Fonts/Mandala/Mandala Bold.otf</file>
-        <file>Fonts/Mandala/Mandala Italic.otf</file>
-        <file>Fonts/Mandala/Mandala Regular.otf</file>
-        <file>Fonts/Mandala/Mandala.ot</file>
-        <file>Fonts/Mandala/quick_tips.html</file>
-        <file>Fonts/Bauhaus.zip</file>
-        <file>Fonts/Directive-Four-Bold.zip</file>
-        <file>Fonts/Godzilla.zip</file>
-        <file>Fonts/Mandala Bold Italic.otf</file>
-        <file>Fonts/Mandala Bold.otf</file>
-        <file>Fonts/Mandala Italic.otf</file>
-        <file>Fonts/Mandala.zip</file>
+        <file>Fonts/data-latin.ttf</file>
+        <file>Fonts/data-unifon.ttf</file>
+        <file>Fonts/Godzilla.ttf</file>
+        <file>Fonts/Bauhaus.ttf</file>
     </qresource>
 </RCC>
