@@ -8,11 +8,20 @@
 extern  QByteArray  sysex_msg;
 extern  QMidiOut    MidiOut;
 
+static void qSleep(int ms)
+{
+    struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
+    nanosleep(&ts, NULL);
+}
+
 void bB101_Midi_MainWindow::on_Reset_clicked()
 {
     QByteArray sdata_reset = QByteArray::fromHex("F0305555F7");
     MidiOut.sendSysEx(sdata_reset);
     initVars();
+    qSleep(500);
+
+    on_ReadCurrentProgram_clicked();
 }
 
 

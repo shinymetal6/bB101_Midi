@@ -32,27 +32,15 @@ bB101_Midi_MainWindow::bB101_Midi_MainWindow(QWidget *parent)
     QFile file1(":/Fonts/Godzilla.ttf");
     if ( file1.exists() )
     {
-        QFontDatabase::addApplicationFont(":/Fonts/Godzilla.ttf");
-        QFontDatabase::addApplicationFont(":/Fonts/Bauhaus.ttf");
-        /**/
-        Font24 = QFont("Godzilla", 24, 1);
-        Font14 = QFont("Godzilla", 14, 1);
-        Font12 = QFont("Godzilla", 12, 3);
-        /**/
-        /*
-        Font24 = QFont("Bauhaus", 24, 1);
-        Font14 = QFont("Bauhaus", 14, 1);
-        Font12 = QFont("Bauhaus", 12, 3);
-        */
         set_all_fonts();
     }
     else
         qDebug() << ":/Fonts/Godzilla.ttf not found";
-    qDebug() << "bB101_Midi\nOut Devices :";
     QMap<QString, QString> out_vals = QMidiOut::devices();
     ui->statusbar->showMessage("Looking for bB101 ...");
     for (QString key : out_vals.keys()) {
         QString value = out_vals.value(key);
+        qDebug() << "bB101_Midi\nOut Devices :";
         qDebug() << "Key : "  << key.toUtf8().constData() << "  \tID : " << value.toUtf8().constData();
         if ( value == "bB101")
         {
@@ -61,7 +49,7 @@ bB101_Midi_MainWindow::bB101_Midi_MainWindow(QWidget *parent)
             MidiIn.connect(key);
             MidiIn.start();
             qDebug() << "bB101 connected to out";
-            ui->statusbar->showMessage("bB101 connected");
+            ui->statusbar->showMessage("bB101 : Connected");
         }
     }
     initVars();
@@ -74,6 +62,19 @@ bB101_Midi_MainWindow::~bB101_Midi_MainWindow()
 
 void bB101_Midi_MainWindow:: set_all_fonts()
 {
+    QFontDatabase::addApplicationFont(":/Fonts/Godzilla.ttf");
+    QFontDatabase::addApplicationFont(":/Fonts/Bauhaus.ttf");
+    /**/
+    Font24 = QFont("Godzilla", 24, 1);
+    Font14 = QFont("Godzilla", 14, 1);
+    Font12 = QFont("Godzilla", 12, 3);
+    /**/
+    /*
+    Font24 = QFont("Bauhaus", 24, 1);
+    Font14 = QFont("Bauhaus", 14, 1);
+    Font12 = QFont("Bauhaus", 12, 3);
+    */
+
     ui->DutyValue1->setFont(Font14);
     ui->DutyValue2->setFont(Font14);
     ui->DutyValue3->setFont(Font14);
@@ -93,7 +94,7 @@ void bB101_Midi_MainWindow:: set_all_fonts()
     ui->VCFLP_radioButton->setFont(Font14);
     ui->VCFBP_radioButton->setFont(Font14);
     ui->VCFHP_radioButton->setFont(Font14);
-    ui->Echo_radioButton->setFont(Font14);
+    ui->Flanger_radioButton->setFont(Font14);
     ui->Reverb_radioButton->setFont(Font14);
     ui->Enable_checkBox->setFont(Font14);
     ui->MIDI_radioButton->setFont(Font14);
@@ -177,11 +178,11 @@ QString PixMapName=":/Icons/sin.bmp";
     AdsrPos.setRect(x,y,w,h);
     AdsrFramePos.setRect(x-1,y-1,w+2,h+2);
     AdsrActiveFramePos.setRect(x+POINTS_VALID_AREA/2,y+POINTS_VALID_AREA/2,w-POINTS_VALID_AREA,h-POINTS_VALID_AREA);
-
+/*
     qDebug() << "ui->ADSR_widget->width() " << ui->ADSR_widget->width() << "ui->ADSR_widget->height() "<< ui->ADSR_widget->height();
     qDebug() << "AdsrPos.x()              " << AdsrPos.x()              << "AdsrPos.y()               "<< AdsrPos.y();
     qDebug() << AdsrPos.x()+LINE_OFFSET_FROM_FRAME<<AdsrPos.y()+ui->ADSR_widget->height()-LINE_OFFSET_FROM_FRAME<<AdsrPos.x()+AdsrPos.width()/4<<AdsrPos.y()+ui->ADSR_widget->height();
-
+*/
     StartPoint.setX(AdsrPos.x()+LINE_OFFSET_FROM_FRAME);
     StartPoint.setY(AdsrPos.y()+ui->ADSR_widget->height()-LINE_OFFSET_FROM_FRAME);
     APoint.setX(AdsrPos.x()+AdsrPos.width()/4);
@@ -204,8 +205,9 @@ QString PixMapName=":/Icons/sin.bmp";
     DColor.setRgb(0,255,0);
     SColor.setRgb(0,255,0);
     Aselected = Dselected = Sselected = 0;
+
+    adsr_correction_factorx = ADSR_CORRECTION_FACTOR_X/(ui->ADSR_widget->width()-LINE_OFFSET_FROM_FRAME);
+    adsr_correction_factory = ADSR_CORRECTION_FACTOR_Y/(ui->ADSR_widget->height()-LINE_OFFSET_FROM_FRAME);
+
+    delay_flag = DLY_MIXER_FLANGER_MIDI;
 }
-
-
-
-

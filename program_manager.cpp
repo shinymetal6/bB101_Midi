@@ -9,10 +9,18 @@ extern  QByteArray  sysex_msg;
 extern  QMidiOut    MidiOut;
 
 
-void qSleep(int ms)
+static void qSleep(int ms)
 {
     struct timespec ts = { ms / 1000, (ms % 1000) * 1000 * 1000 };
     nanosleep(&ts, NULL);
+}
+
+
+void bB101_Midi_MainWindow::applyReceivedParams()
+{
+    applyReceivedADSRParams();
+    applyReceivedOSCParams();
+    applyReceivedDelayParams();
 }
 
 void bB101_Midi_MainWindow::on_ReadCurrentProgram_clicked()
@@ -25,13 +33,23 @@ void bB101_Midi_MainWindow::on_ReadCurrentProgram_clicked()
     qSleep(100);
     if ( sysex_msg != "No RX" )
     {
-        if ( sysex_msg[1] == 'b' )
-            qDebug() << "received " << sysex_msg;
+       if ((sysex_msg.at(1) == BB_EE_MACHINE_FAMILY ) && (sysex_msg.at(2) == BB_EE_MACHINE_MODEL))
+       {
+           ui->statusbar->showMessage("bB101 : Program downloaded");
+           qDebug() << "received " << sysex_msg << sysex_msg.length();
+           applyReceivedParams();
+       }
         else
+       {
+            ui->statusbar->showMessage("bB101 : Invalid program");
             qDebug() << "Invalid program";
+       }
     }
     else
+    {
+        ui->statusbar->showMessage("bB101 : Connection lost");
         qDebug() << "RX Failed";
+    }
 }
 
 void bB101_Midi_MainWindow::on_ReadProgram_clicked()
@@ -50,12 +68,20 @@ void bB101_Midi_MainWindow::on_ReadProgram_clicked()
         if ( sysex_msg != "No RX" )
         {
             if ( sysex_msg[1] == 'b' )
+            {
+                ui->statusbar->showMessage("bB101 : Program downloaded");
                 qDebug() << "received " << sysex_msg;
-            else
-                qDebug() << "Invalid program";
+            }
+            {
+                 ui->statusbar->showMessage("bB101 : Invalid program");
+                 qDebug() << "Invalid program";
+            }
         }
         else
+        {
+            ui->statusbar->showMessage("bB101 : Connection lost");
             qDebug() << "RX Failed";
+        }
 }
 
 void bB101_Midi_MainWindow::on_IncrementReadProg_pushButton_clicked()
@@ -101,3 +127,5 @@ void bB101_Midi_MainWindow::on_DecrementEraseProg_pushButton_clicked()
         ui->Erase_lcdNumber->display(ui->Erase_lcdNumber->value()-1);
 
 }
+
+
