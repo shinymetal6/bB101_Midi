@@ -4,5 +4,7 @@
         <file>Fonts/data-unifon.ttf</file>
         <file>Fonts/Godzilla.ttf</file>
         <file>Fonts/Bauhaus.ttf</file>
+        <file>Fonts/destructobeambb_bold.ttf</file>
+        <file>Fonts/destructobeambb_reg.ttf</file>
     </qresource>
 </RCC>

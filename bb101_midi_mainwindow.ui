@@ -6575,7 +6575,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>50</y>
+       <y>60</y>
        <width>61</width>
        <height>25</height>
       </rect>
@@ -6596,7 +6596,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>110</y>
+       <y>120</y>
        <width>61</width>
        <height>25</height>
       </rect>
@@ -6614,7 +6614,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>90</y>
+       <y>100</y>
        <width>61</width>
        <height>25</height>
       </rect>
@@ -6632,7 +6632,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
+       <y>50</y>
        <width>61</width>
        <height>19</height>
       </rect>
@@ -6650,7 +6650,7 @@
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>40</y>
+       <y>50</y>
        <width>91</width>
        <height>19</height>
       </rect>
@@ -6669,7 +6669,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
+       <y>60</y>
        <width>50</width>
        <height>64</height>
       </rect>
@@ -7139,7 +7139,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>110</y>
+       <y>120</y>
        <width>41</width>
        <height>27</height>
       </rect>
@@ -7160,7 +7160,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>50</y>
+       <y>60</y>
        <width>50</width>
        <height>64</height>
       </rect>
@@ -7630,7 +7630,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>110</y>
+       <y>120</y>
        <width>41</width>
        <height>27</height>
       </rect>
@@ -7651,7 +7651,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>70</y>
+       <y>80</y>
        <width>61</width>
        <height>25</height>
       </rect>
@@ -8182,7 +8182,7 @@
      <property name="geometry">
       <rect>
        <x>100</x>
-       <y>60</y>
+       <y>70</y>
        <width>41</width>
        <height>27</height>
       </rect>
@@ -8276,9 +8276,9 @@
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>40</y>
+       <y>50</y>
        <width>41</width>
-       <height>31</height>
+       <height>30</height>
       </rect>
      </property>
      <property name="palette">
@@ -8738,9 +8738,9 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>40</y>
-       <width>31</width>
-       <height>31</height>
+       <y>50</y>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -8750,10 +8750,10 @@
     <widget class="QPushButton" name="DecrementReadProg_pushButton">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>40</y>
-       <width>31</width>
-       <height>31</height>
+       <x>294</x>
+       <y>50</y>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -8764,7 +8764,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
+       <y>50</y>
        <width>201</width>
        <height>27</height>
       </rect>
@@ -8780,7 +8780,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
+       <y>80</y>
        <width>201</width>
        <height>27</height>
       </rect>
@@ -8823,7 +8823,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>110</y>
        <width>201</width>
        <height>27</height>
       </rect>
@@ -8836,9 +8836,9 @@
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>100</y>
+       <y>110</y>
        <width>41</width>
-       <height>31</height>
+       <height>30</height>
       </rect>
      </property>
      <property name="palette">
@@ -9298,9 +9298,9 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>100</y>
-       <width>31</width>
-       <height>31</height>
+       <y>110</y>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -9310,10 +9310,10 @@
     <widget class="QPushButton" name="DecrementSaveProg_pushButton">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>100</y>
-       <width>31</width>
-       <height>31</height>
+       <x>294</x>
+       <y>110</y>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -9429,8 +9429,8 @@
       <rect>
        <x>220</x>
        <y>140</y>
-       <width>31</width>
-       <height>31</height>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -9443,7 +9443,7 @@
        <x>250</x>
        <y>140</y>
        <width>41</width>
-       <height>31</height>
+       <height>30</height>
       </rect>
      </property>
      <property name="palette">
@@ -9902,10 +9902,10 @@
     <widget class="QPushButton" name="DecrementEraseProg_pushButton">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>294</x>
        <y>140</y>
-       <width>31</width>
-       <height>31</height>
+       <width>28</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
@@ -9916,7 +9916,7 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>140</y>
+       <y>150</y>
        <width>91</width>
        <height>25</height>
       </rect>
@@ -10104,19 +10104,6 @@
       <string>Cmd source</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>110</y>
-       <width>100</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QFrame" name="ADSR_frame">
     <property name="geometry">
@@ -10133,7 +10120,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="Delay_label_2">
+    <widget class="QLabel" name="ADSR_label">
      <property name="geometry">
       <rect>
        <x>0</x>

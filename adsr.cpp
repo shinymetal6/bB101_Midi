@@ -15,12 +15,6 @@ void bB101_Midi_MainWindow:: adsr(QPainter *qp)
     Q_UNUSED(qp);
 }
 
-void bB101_Midi_MainWindow::on_pushButton_clicked()
-{
-    AdsrFramePos.setRect(180,220,300,200);
-    update();
-}
-
 void bB101_Midi_MainWindow::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);

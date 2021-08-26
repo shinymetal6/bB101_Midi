@@ -209,8 +209,6 @@ private slots:
 
     void on_Close_pushButton_clicked();
 
-    void on_pushButton_clicked();
-
     void on_Enable_checkBox_clicked(bool checked);
 
 private:

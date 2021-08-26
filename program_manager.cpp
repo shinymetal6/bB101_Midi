@@ -111,7 +111,7 @@ void bB101_Midi_MainWindow::on_DecrementSaveProg_pushButton_clicked()
 
 void bB101_Midi_MainWindow::on_Erase_pushButton_clicked()
 {
-
+    ui->ConfirmErase_checkBox->setChecked(false);
 }
 
 
