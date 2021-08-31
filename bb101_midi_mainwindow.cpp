@@ -104,13 +104,18 @@ QString family;
     ui->CutoffValue->setFont(Font12);
     ui->ResonanceValue->setFont(Font10);
     ui->DelayValue->setFont(Font10);
-    ui->VCFAP_radioButton->setFont(Font10);
     ui->VCFLP_radioButton->setFont(Font10);
     ui->VCFBP_radioButton->setFont(Font10);
     ui->VCFHP_radioButton->setFont(Font10);
+    ui->VCF_Enable_checkBox->setFont(Font10);
+    ui->VCF_Pot_radioButton->setFont(Font10);
+    ui->VCF_MIDI_radioButton->setFont(Font10);
+    ui->VCF_CV_radioButton->setFont(Font10);
+
     ui->Flanger_radioButton->setFont(Font10);
     ui->Reverb_radioButton->setFont(Font10);
-    ui->Enable_checkBox->setFont(Font10);
+    ui->DLY_Enable_checkBox->setFont(Font10);
+    ui->DLY_MIDI_checkBox->setFont(Font10);
     ui->MIDI_radioButton->setFont(Font10);
     ui->CV_radioButton->setFont(Font10);
     ui->Pot_radioButton->setFont(Font10);
@@ -181,10 +186,13 @@ QString PixMapName=":/Icons/sin.bmp";
     ui->DutyValue2->setText("5");
     ui->DutyValue3->setText("5");
     ui->DutyValue4->setText("5");
-    ui->VCFAP_radioButton->setChecked(true) ;
     ui->VCFLP_radioButton->setChecked(false) ;
-    ui->VCFBP_radioButton->setChecked(false);
+    ui->VCFBP_radioButton->setChecked(true);
     ui->VCFHP_radioButton->setChecked(false);
+    ui->VCF_Enable_checkBox->setChecked(false) ;
+    ui->VCF_Pot_radioButton->setChecked(false);
+    ui->VCF_MIDI_radioButton->setChecked(true);
+    ui->VCF_CV_radioButton->setChecked(false);
     ui->CutoffValue->setText("0");
     ui->ResonanceValue->setText("0");
     ui->DelayValue->setText("0");
@@ -228,3 +236,5 @@ QString PixMapName=":/Icons/sin.bmp";
 
     delay_flag = DLY_MIXER_FLANGER_MIDI;
 }
+
+

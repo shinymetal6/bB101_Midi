@@ -33,22 +33,32 @@
 #define	CC_OSCDETUNE1			0x0D
 #define	CC_OSCDETUNE2			0x0E
 #define	CC_OSCDETUNE3			0x0F
-#define	CC_VCFENABLE			0x10
-#define	CC_VCFTYPE				0x11
-#define	CC_VCFFREQUENCY			0x12
-#define	CC_VCFRESONANCE			0x13
-#define	CC_DLYENABLE			0x20
-#define	CC_DELAYLEN				0x21
-#define	CC_DELAYBALANCE			0x22
-#define	CC_ATIME				0x30
-#define	CC_DTIME				0x31
-#define	CC_SVAL					0x32
-#define	CC_RTIME				0x33
-#define	CC_SEQUENCE				0x40
+#define	CC_NOISE2WAVEWEIGHT0	0x10
+#define	CC_NOISE2WAVEWEIGHT1	0x11
+#define	CC_NOISE2WAVEWEIGHT2	0x12
+#define	CC_NOISE2WAVEWEIGHT3	0x13
+#define	CC_VCFENABLE			0x20
+#define	CC_VCFTYPE				0x21
+#define	CC_VCFFREQUENCY			0x22
+#define	CC_VCFRESONANCE			0x23
+#define	CC_VCFSOURCE			0x24
+#define	CC_DLYENABLE			0x30
+#define	CC_DELAYLEN				0x31
+#define	CC_DELAYBALANCE			0x32
+#define	CC_DELAYSOURCE			0x33
+#define	CC_ATIME				0x40
+#define	CC_DTIME				0x41
+#define	CC_SVAL					0x42
+#define	CC_RTIME				0x43
+#define	CC_SEQUENCE				0x50
 
-#define	SINE                    0
-#define	TRIANGLE				1
-#define	SQUARE					2
+#define	SINE							0
+#define	TRIANGLE						1
+#define	SQUARE							2
+#define	NOISE							3
+#define	NOISEMODSINE					4
+#define	NOISEMODTRIANGLE				5
+#define	NOISEMODSQUARE					6
 
 #define ADSR_CORRECTION_FACTOR_X  80.0F
 #define ADSR_CORRECTION_FACTOR_Y  32.0F
@@ -59,6 +69,14 @@
 #define	DLY_MIXER_FLANGER_MIDI		0x02
 #define	DLY_MIXER_REVERB_MIDI		0x03
 #define	DLY_ENABLED					0x40
+
+
+#define	VCF_CONTROL_POT				0x01
+#define	VCF_CONTROL_MIDI			0x02
+#define	VCF_CONTROL_CV				0x04
+#define	VCF_TYPE_LP					0x08
+#define	VCF_TYPE_BP					0x10
+#define	VCF_TYPE_HP					0x20
 
 #define PARAMS_PROG_FLAG0       1
 #define PARAMS_PROG_FLAG1       2
@@ -187,17 +205,7 @@ private slots:
 
     void on_Delay_valueChanged(int value);
 
-    void on_Flanger_radioButton_clicked();
-
-    void on_Reverb_radioButton_clicked();
-
     void on_CmdSource_pushButton_clicked();
-
-    void on_MIDI_radioButton_clicked();
-
-    void on_CV_radioButton_clicked();
-
-    void on_Pot_radioButton_clicked();
 
     void on_Erase_pushButton_clicked();
 
@@ -209,7 +217,33 @@ private slots:
 
     void on_Close_pushButton_clicked();
 
-    void on_Enable_checkBox_clicked(bool checked);
+    void on_DLY_MIDI_checkBox_clicked(bool checked);
+
+    void on_DLY_Enable_checkBox_clicked(bool checked);
+
+    void on_VCF_Enable_checkBox_clicked(bool checked);
+
+    void on_Flanger_radioButton_clicked(bool checked);
+
+    void on_Reverb_radioButton_clicked(bool checked);
+
+    void on_MIDI_radioButton_clicked(bool checked);
+
+    void on_CV_radioButton_clicked(bool checked);
+
+    void on_Pot_radioButton_clicked(bool checked);
+
+    void on_VCF_Pot_radioButton_clicked(bool checked);
+
+    void on_VCF_MIDI_radioButton_clicked(bool checked);
+
+    void on_VCF_CV_radioButton_clicked(bool checked);
+
+    void on_VCFLP_radioButton_clicked(bool checked);
+
+    void on_VCFBP_radioButton_clicked(bool checked);
+
+    void on_VCFHP_radioButton_clicked(bool checked);
 
 private:
     Ui::bB101_Midi_MainWindow *ui;

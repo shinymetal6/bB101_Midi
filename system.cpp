@@ -31,24 +31,24 @@ void bB101_Midi_MainWindow::on_CmdSource_pushButton_clicked()
 
 }
 
-void bB101_Midi_MainWindow::on_MIDI_radioButton_clicked()
+
+void bB101_Midi_MainWindow::on_MIDI_radioButton_clicked(bool checked)
 {
     ui->MIDI_radioButton->setChecked(true);
     ui->CV_radioButton->setChecked(false);
     ui->Pot_radioButton->setChecked(false);
 }
 
-void bB101_Midi_MainWindow::on_CV_radioButton_clicked()
+void bB101_Midi_MainWindow::on_CV_radioButton_clicked(bool checked)
 {
     ui->MIDI_radioButton->setChecked(false);
     ui->CV_radioButton->setChecked(true);
     ui->Pot_radioButton->setChecked(false);
 }
 
-void bB101_Midi_MainWindow::on_Pot_radioButton_clicked()
+void bB101_Midi_MainWindow::on_Pot_radioButton_clicked(bool checked)
 {
     ui->MIDI_radioButton->setChecked(false);
     ui->CV_radioButton->setChecked(false);
     ui->Pot_radioButton->setChecked(true);
 }
-

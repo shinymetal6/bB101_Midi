@@ -3,5 +3,6 @@
         <file>Icons/sin.bmp</file>
         <file>Icons/sqr.bmp</file>
         <file>Icons/tri.bmp</file>
+        <file>Icons/noise.bmp</file>
     </qresource>
 </RCC>

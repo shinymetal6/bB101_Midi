@@ -23,6 +23,7 @@ QString PixMapName="";
     case    0   : PixMapName=":/Icons/sin.bmp"; send_control_change(CC_OSCWAVE0,SINE);break;
     case    1   : PixMapName=":/Icons/tri.bmp"; send_control_change(CC_OSCWAVE0,TRIANGLE); break;
     case    2   : PixMapName=":/Icons/sqr.bmp"; send_control_change(CC_OSCWAVE0,SQUARE);break;
+    case    3   : PixMapName=":/Icons/noise.bmp"; send_control_change(CC_OSCWAVE0,NOISE);break;
     default :   PixMapName=":/Icons/sin.bmp";   send_control_change(CC_OSCWAVE0,SINE);wave_state[0] = 0;break;
     }
     ui->pushButton_Wave1->setIcon(QPixmap(PixMapName));
@@ -37,6 +38,7 @@ QString PixMapName="";
     case    0   : PixMapName=":/Icons/sin.bmp"; send_control_change(CC_OSCWAVE1,SINE);break;
     case    1   : PixMapName=":/Icons/tri.bmp"; send_control_change(CC_OSCWAVE1,TRIANGLE); break;
     case    2   : PixMapName=":/Icons/sqr.bmp"; send_control_change(CC_OSCWAVE1,SQUARE);break;
+    case    3   : PixMapName=":/Icons/noise.bmp"; send_control_change(CC_OSCWAVE1,NOISE);break;
     default :   PixMapName=":/Icons/sin.bmp";   send_control_change(CC_OSCWAVE1,SINE);wave_state[1] = 0;break;
     }
     ui->pushButton_Wave2->setIcon(QPixmap(PixMapName));
@@ -51,6 +53,7 @@ QString PixMapName="";
     case    0   : PixMapName=":/Icons/sin.bmp"; send_control_change(CC_OSCWAVE2,SINE);break;
     case    1   : PixMapName=":/Icons/tri.bmp"; send_control_change(CC_OSCWAVE2,TRIANGLE); break;
     case    2   : PixMapName=":/Icons/sqr.bmp"; send_control_change(CC_OSCWAVE2,SQUARE);break;
+    case    3   : PixMapName=":/Icons/noise.bmp"; send_control_change(CC_OSCWAVE2,NOISE);break;
     default :   PixMapName=":/Icons/sin.bmp";   send_control_change(CC_OSCWAVE2,SINE);wave_state[2] = 0;break;
     }
     ui->pushButton_Wave3->setIcon(QPixmap(PixMapName));
@@ -65,6 +68,7 @@ QString PixMapName="";
     case    0   : PixMapName=":/Icons/sin.bmp"; send_control_change(CC_OSCWAVE3,SINE);break;
     case    1   : PixMapName=":/Icons/tri.bmp"; send_control_change(CC_OSCWAVE3,TRIANGLE); break;
     case    2   : PixMapName=":/Icons/sqr.bmp"; send_control_change(CC_OSCWAVE3,SQUARE);break;
+    case    3   : PixMapName=":/Icons/noise.bmp"; send_control_change(CC_OSCWAVE3,NOISE);break;
     default :   PixMapName=":/Icons/sin.bmp";   send_control_change(CC_OSCWAVE3,SINE);wave_state[3] = 0;break;
     }
     ui->pushButton_Wave4->setIcon(QPixmap(PixMapName));
@@ -118,45 +122,37 @@ void bB101_Midi_MainWindow::on_Volume4_valueChanged(int value)
 void bB101_Midi_MainWindow::on_Duty1_valueChanged(int value)
 {
     QString str;
-    float duty_value;
         str.setNum(value);
         ui->DutyValue1->setText(str);
         ui->Duty1->setValue(value);
-        duty_value = (float ) value * 12.7F;
-        send_control_change(CC_OSCDUTY0,(int )duty_value);
+        send_control_change(CC_OSCDUTY0,value * 10);
 }
 
 void bB101_Midi_MainWindow::on_Duty2_valueChanged(int value)
 {
     QString str;
-    float duty_value;
         str.setNum(value);
         ui->DutyValue2->setText(str);
         ui->Duty2->setValue(value);
-        duty_value = (float ) value * 12.7F;
-        send_control_change(CC_OSCDUTY1,(int )duty_value);
+        send_control_change(CC_OSCDUTY1,value * 10);
 }
 
 void bB101_Midi_MainWindow::on_Duty3_valueChanged(int value)
 {
     QString str;
-    float duty_value;
         str.setNum(value);
         ui->DutyValue3->setText(str);
         ui->Duty3->setValue(value);
-        duty_value = (float ) value * 12.7F;
-        send_control_change(CC_OSCDUTY2,(int )duty_value);
+        send_control_change(CC_OSCDUTY2,value * 10);
 }
 
 void bB101_Midi_MainWindow::on_Duty4_valueChanged(int value)
 {
     QString str;
-    float duty_value;
         str.setNum(value);
         ui->DutyValue4->setText(str);
         ui->Duty4->setValue(value);
-        duty_value = (float ) value * 12.7F;
-        send_control_change(CC_OSCDUTY3,(int )duty_value);
+        send_control_change(CC_OSCDUTY3,value * 10);
 }
 
 void bB101_Midi_MainWindow::on_Detune1_valueChanged(int value)
@@ -221,27 +217,31 @@ void bB101_Midi_MainWindow::applyReceivedOSCParams()
     osc_wavesl = sysex_msg.at(PARAMS_OSC_WAVESL);
     switch ( osc_wavesh & 0x03)
     {
-    case  SINE      :  wave_state[0] = SQUARE;break;
+    case  SINE      :  wave_state[0] = NOISE;break;
     case  TRIANGLE  :  wave_state[0] = SINE;break;
     case  SQUARE    :  wave_state[0] = TRIANGLE;break;
+    case  NOISE     :  wave_state[0] = SQUARE;break;
     }
     switch ( (osc_wavesh & 0x0c) >> 2 )
     {
-    case  SINE      :  wave_state[1] = SQUARE;break;
+    case  SINE      :  wave_state[1] = NOISE;break;
     case  TRIANGLE  :  wave_state[1] = SINE;break;
     case  SQUARE    :  wave_state[1] = TRIANGLE;break;
+    case  NOISE     :  wave_state[1] = SQUARE;break;
     }
     switch ( osc_wavesl & 0x03)
     {
-    case  SINE      :  wave_state[2] = SQUARE;break;
+    case  SINE      :  wave_state[2] = NOISE;break;
     case  TRIANGLE  :  wave_state[2] = SINE;break;
     case  SQUARE    :  wave_state[2] = TRIANGLE;break;
+    case  NOISE     :  wave_state[2] = SQUARE;break;
     }
     switch ( (osc_wavesl & 0x0c) >> 2 )
     {
-    case  SINE      :  wave_state[3] = SQUARE;break;
+    case  SINE      :  wave_state[3] = NOISE;break;
     case  TRIANGLE  :  wave_state[3] = SINE;break;
     case  SQUARE    :  wave_state[3] = TRIANGLE;break;
+    case  NOISE     :  wave_state[3] = SQUARE;break;
     }
     on_pushButton_Wave1_clicked();
     on_pushButton_Wave2_clicked();

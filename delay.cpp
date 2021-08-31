@@ -18,8 +18,7 @@ void bB101_Midi_MainWindow::on_Delay_valueChanged(int value)
         send_control_change(CC_DELAYLEN,value/10);
 }
 
-
-void bB101_Midi_MainWindow::on_Flanger_radioButton_clicked()
+void bB101_Midi_MainWindow::on_Flanger_radioButton_clicked(bool checked)
 {
     ui->Reverb_radioButton->setChecked(false);
     delay_flag |= DLY_MIXER_FLANGER_MIDI;
@@ -28,7 +27,8 @@ void bB101_Midi_MainWindow::on_Flanger_radioButton_clicked()
 }
 
 
-void bB101_Midi_MainWindow::on_Reverb_radioButton_clicked()
+
+void bB101_Midi_MainWindow::on_Reverb_radioButton_clicked(bool checked)
 {
     ui->Flanger_radioButton->setChecked(false);
     delay_flag |= DLY_MIXER_REVERB_MIDI;
@@ -36,17 +36,8 @@ void bB101_Midi_MainWindow::on_Reverb_radioButton_clicked()
     send_control_change(CC_DLYENABLE,delay_flag);
 }
 
-/*
-void bB101_Midi_MainWindow::on_Enable_checkBox_stateChanged(int arg1)
+void bB101_Midi_MainWindow::on_DLY_Enable_checkBox_clicked(bool checked)
 {
-    Q_UNUSED(arg1);
-
-}
-*/
-
-void bB101_Midi_MainWindow::on_Enable_checkBox_clicked(bool checked)
-{
-    int value = 0;
     if ( checked )
         delay_flag |= DLY_ENABLED;
     else
@@ -67,3 +58,7 @@ unsigned char delay_val;
     cc_tx_enabled = 1;
 }
 
+void bB101_Midi_MainWindow::on_DLY_MIDI_checkBox_clicked(bool checked)
+{
+    send_control_change(CC_DELAYSOURCE,checked);
+}
