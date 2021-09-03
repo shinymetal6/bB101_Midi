@@ -1554,10 +1554,13 @@
       </palette>
      </property>
      <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="singleStep">
       <number>10</number>
      </property>
      <property name="value">
-      <number>5</number>
+      <number>50</number>
      </property>
      <property name="notchesVisible">
       <bool>true</bool>
@@ -2015,10 +2018,13 @@
       </palette>
      </property>
      <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="singleStep">
       <number>10</number>
      </property>
      <property name="value">
-      <number>5</number>
+      <number>50</number>
      </property>
      <property name="notchesVisible">
       <bool>true</bool>
@@ -2943,10 +2949,13 @@
       </palette>
      </property>
      <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="singleStep">
       <number>10</number>
      </property>
      <property name="value">
-      <number>5</number>
+      <number>50</number>
      </property>
      <property name="notchesVisible">
       <bool>true</bool>
@@ -3871,10 +3880,13 @@
       </palette>
      </property>
      <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="singleStep">
       <number>10</number>
      </property>
      <property name="value">
-      <number>5</number>
+      <number>50</number>
      </property>
      <property name="wrapping">
       <bool>false</bool>
@@ -6544,9 +6556,9 @@
     <widget class="QLabel" name="VCF_label">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>120</x>
        <y>9</y>
-       <width>341</width>
+       <width>101</width>
        <height>41</height>
       </rect>
      </property>
@@ -6565,49 +6577,10 @@
       </font>
      </property>
      <property name="text">
-      <string>VCF</string>
+      <string>AFX</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="VCFHP_radioButton">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>120</y>
-       <width>61</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
-     </property>
-     <property name="text">
-      <string>HP</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="VCFBP_radioButton">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>100</y>
-       <width>61</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
-     </property>
-     <property name="text">
-      <string>BP</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="Cutoff_label">
@@ -7629,31 +7602,13 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QRadioButton" name="VCFLP_radioButton">
+    <widget class="QFrame" name="effectcontrol_frame">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>190</x>
        <y>80</y>
        <width>61</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
-     </property>
-     <property name="text">
-      <string>LP</string>
-     </property>
-    </widget>
-    <widget class="QFrame" name="frame_5">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>60</y>
-       <width>111</width>
-       <height>91</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -7662,30 +7617,12 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QCheckBox" name="VCF_Enable_checkBox">
+     <widget class="QRadioButton" name="AFX_Pot_radioButton">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>101</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Godzilla</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Enable</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="VCF_Pot_radioButton">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>61</width>
+        <width>51</width>
         <height>25</height>
        </rect>
       </property>
@@ -7698,11 +7635,11 @@
        <string>Pot</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="VCF_MIDI_radioButton">
+     <widget class="QRadioButton" name="AFX_MIDI_radioButton">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>40</y>
+        <x>0</x>
+        <y>20</y>
         <width>61</width>
         <height>25</height>
        </rect>
@@ -7719,11 +7656,11 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QRadioButton" name="VCF_CV_radioButton">
+     <widget class="QRadioButton" name="AFX_CV_radioButton">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>60</y>
+        <x>0</x>
+        <y>40</y>
         <width>61</width>
         <height>25</height>
        </rect>
@@ -7735,6 +7672,167 @@
       </property>
       <property name="text">
        <string>CV</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="effectband_frame">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>80</y>
+       <width>61</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QRadioButton" name="VCFLP_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>LP</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="VCFBP_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>BP</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="VCFHP_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>HP</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="AFX_Enable_checkBox">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>50</y>
+       <width>101</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Godzilla</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="effecttype_frame">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>80</y>
+       <width>91</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QRadioButton" name="AFXMOOG1_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Moog1</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="AFXMOOG2_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Moog2</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="AFXPhaser_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>71</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Phsr</string>
       </property>
      </widget>
     </widget>
@@ -8272,50 +8370,84 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QRadioButton" name="Flanger_radioButton">
+    <widget class="QFrame" name="delayframe">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>10</y>
-       <width>91</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
-     </property>
-     <property name="text">
-      <string>Flanger</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="Reverb_radioButton">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
+       <x>230</x>
        <y>30</y>
-       <width>81</width>
-       <height>25</height>
+       <width>101</width>
+       <height>71</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
-     <property name="text">
-      <string>Reverb</string>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
      </property>
+     <widget class="QCheckBox" name="DLY_MIDI_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>MIDI</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="Reverb_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reverb</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="Flanger_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Godzilla</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Flanger</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QCheckBox" name="DLY_Enable_checkBox">
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>50</y>
+       <y>10</y>
        <width>81</width>
        <height>25</height>
       </rect>
@@ -8327,24 +8459,6 @@
      </property>
      <property name="text">
       <string>Enable</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="DLY_MIDI_checkBox">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>70</y>
-       <width>81</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Godzilla</family>
-      </font>
-     </property>
-     <property name="text">
-      <string>MIDI</string>
      </property>
     </widget>
    </widget>

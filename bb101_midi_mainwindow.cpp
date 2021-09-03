@@ -104,13 +104,6 @@ QString family;
     ui->CutoffValue->setFont(Font12);
     ui->ResonanceValue->setFont(Font10);
     ui->DelayValue->setFont(Font10);
-    ui->VCFLP_radioButton->setFont(Font10);
-    ui->VCFBP_radioButton->setFont(Font10);
-    ui->VCFHP_radioButton->setFont(Font10);
-    ui->VCF_Enable_checkBox->setFont(Font10);
-    ui->VCF_Pot_radioButton->setFont(Font10);
-    ui->VCF_MIDI_radioButton->setFont(Font10);
-    ui->VCF_CV_radioButton->setFont(Font10);
 
     ui->Flanger_radioButton->setFont(Font10);
     ui->Reverb_radioButton->setFont(Font10);
@@ -127,6 +120,17 @@ QString family;
     ui->Reset->setFont(Font10);
     ui->Close_pushButton->setFont(Font10);
     ui->ConfirmErase_checkBox->setFont(Font10);
+
+    ui->AFXMOOG1_radioButton->setFont(Font10);
+    ui->AFXMOOG2_radioButton->setFont(Font10);
+    ui->AFXPhaser_radioButton->setFont(Font10);
+    ui->VCFLP_radioButton->setFont(Font10);
+    ui->VCFBP_radioButton->setFont(Font10);
+    ui->VCFHP_radioButton->setFont(Font10);
+    ui->AFX_Enable_checkBox->setFont(Font10);
+    ui->AFX_Pot_radioButton->setFont(Font10);
+    ui->AFX_MIDI_radioButton->setFont(Font10);
+    ui->AFX_CV_radioButton->setFont(Font10);
 
     /* main labels */
     ui->Programs_label->setFont(Font20);
@@ -178,24 +182,37 @@ QString PixMapName=":/Icons/sin.bmp";
     ui->DetuneValue2->setText("0");
     ui->DetuneValue3->setText("0");
     ui->DetuneValue4->setText("0");
-    ui->Duty1->setValue(5);
-    ui->Duty2->setValue(5);
-    ui->Duty3->setValue(5);
-    ui->Duty4->setValue(5);
-    ui->DutyValue1->setText("5");
-    ui->DutyValue2->setText("5");
-    ui->DutyValue3->setText("5");
-    ui->DutyValue4->setText("5");
+    ui->Duty1->setValue(50);
+    ui->Duty2->setValue(50);
+    ui->Duty3->setValue(50);
+    ui->Duty4->setValue(50);
+    ui->DutyValue1->setText("50");
+    ui->DutyValue2->setText("50");
+    ui->DutyValue3->setText("50");
+    ui->DutyValue4->setText("50");
     ui->VCFLP_radioButton->setChecked(false) ;
     ui->VCFBP_radioButton->setChecked(true);
     ui->VCFHP_radioButton->setChecked(false);
-    ui->VCF_Enable_checkBox->setChecked(false) ;
-    ui->VCF_Pot_radioButton->setChecked(false);
-    ui->VCF_MIDI_radioButton->setChecked(true);
-    ui->VCF_CV_radioButton->setChecked(false);
+    ui->AFX_Enable_checkBox->setChecked(false) ;
+    ui->AFX_Pot_radioButton->setChecked(false);
+    ui->AFX_MIDI_radioButton->setChecked(true);
+    ui->AFX_CV_radioButton->setChecked(false);
+    ui->AFXMOOG1_radioButton->setChecked(true);
+    ui->AFXMOOG2_radioButton->setChecked(false);
+    ui->AFXPhaser_radioButton->setChecked(false);
+
+
     ui->CutoffValue->setText("0");
     ui->ResonanceValue->setText("0");
+    ui->effectband_frame->setEnabled(false);
+    ui->effectcontrol_frame->setEnabled(false);
+    ui->effecttype_frame->setEnabled(false);
+
+
     ui->DelayValue->setText("0");
+    ui->delayframe->setEnabled(false);
+
+
     int x = ui->ADSR_frame->x() + ui->ADSR_widget->x();
     int y = ui->ADSR_frame->y() + ui->ADSR_widget->y();
     int w = ui->ADSR_widget->width();

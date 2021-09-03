@@ -125,7 +125,7 @@ void bB101_Midi_MainWindow::on_Duty1_valueChanged(int value)
         str.setNum(value);
         ui->DutyValue1->setText(str);
         ui->Duty1->setValue(value);
-        send_control_change(CC_OSCDUTY0,value * 10);
+        send_control_change(CC_OSCDUTY0,value);
 }
 
 void bB101_Midi_MainWindow::on_Duty2_valueChanged(int value)
@@ -134,7 +134,7 @@ void bB101_Midi_MainWindow::on_Duty2_valueChanged(int value)
         str.setNum(value);
         ui->DutyValue2->setText(str);
         ui->Duty2->setValue(value);
-        send_control_change(CC_OSCDUTY1,value * 10);
+        send_control_change(CC_OSCDUTY1,value);
 }
 
 void bB101_Midi_MainWindow::on_Duty3_valueChanged(int value)
@@ -143,7 +143,7 @@ void bB101_Midi_MainWindow::on_Duty3_valueChanged(int value)
         str.setNum(value);
         ui->DutyValue3->setText(str);
         ui->Duty3->setValue(value);
-        send_control_change(CC_OSCDUTY2,value * 10);
+        send_control_change(CC_OSCDUTY2,value);
 }
 
 void bB101_Midi_MainWindow::on_Duty4_valueChanged(int value)
@@ -152,7 +152,7 @@ void bB101_Midi_MainWindow::on_Duty4_valueChanged(int value)
         str.setNum(value);
         ui->DutyValue4->setText(str);
         ui->Duty4->setValue(value);
-        send_control_change(CC_OSCDUTY3,value * 10);
+        send_control_change(CC_OSCDUTY3,value);
 }
 
 void bB101_Midi_MainWindow::on_Detune1_valueChanged(int value)
@@ -248,10 +248,10 @@ void bB101_Midi_MainWindow::applyReceivedOSCParams()
     on_pushButton_Wave3_clicked();
     on_pushButton_Wave4_clicked();
 
-    duty0 = (sysex_msg.at(PARAMS_OSC_DUTY0)+1)/10;
-    duty1 = (sysex_msg.at(PARAMS_OSC_DUTY1)+1)/10;
-    duty2  =(sysex_msg.at(PARAMS_OSC_DUTY2)+1)/10;
-    duty3 = (sysex_msg.at(PARAMS_OSC_DUTY3)+1)/10;
+    duty0 = (sysex_msg.at(PARAMS_OSC_DUTY0));
+    duty1 = (sysex_msg.at(PARAMS_OSC_DUTY1));
+    duty2  =(sysex_msg.at(PARAMS_OSC_DUTY2));
+    duty3 = (sysex_msg.at(PARAMS_OSC_DUTY3));
     on_Duty1_valueChanged(duty0);
     on_Duty2_valueChanged(duty1);
     on_Duty3_valueChanged(duty2);

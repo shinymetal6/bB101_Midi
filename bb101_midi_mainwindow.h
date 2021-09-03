@@ -33,15 +33,12 @@
 #define	CC_OSCDETUNE1			0x0D
 #define	CC_OSCDETUNE2			0x0E
 #define	CC_OSCDETUNE3			0x0F
-#define	CC_NOISE2WAVEWEIGHT0	0x10
-#define	CC_NOISE2WAVEWEIGHT1	0x11
-#define	CC_NOISE2WAVEWEIGHT2	0x12
-#define	CC_NOISE2WAVEWEIGHT3	0x13
-#define	CC_VCFENABLE			0x20
-#define	CC_VCFTYPE				0x21
-#define	CC_VCFFREQUENCY			0x22
-#define	CC_VCFRESONANCE			0x23
-#define	CC_VCFSOURCE			0x24
+#define	CC_AFXENABLE			0x20
+#define	CC_AFXCONTROL			0x21
+#define	CC_AFXTYPE				0x22
+#define	CC_AFXFREQUENCY			0x23
+#define	CC_AFXRESONANCE			0x24
+#define	CC_AFXCONTROLSOURCE		0x25
 #define	CC_DLYENABLE			0x30
 #define	CC_DELAYLEN				0x31
 #define	CC_DELAYBALANCE			0x32
@@ -70,20 +67,25 @@
 #define	DLY_MIXER_REVERB_MIDI		0x03
 #define	DLY_ENABLED					0x40
 
+#define	AFX_CONTROL_POT				0x01
+#define	AFX_CONTROL_MIDI			0x02
+#define	AFX_CONTROL_CV				0x04
+#define	AFX_CONTROL_LP				0x08
+#define	AFX_CONTROL_BP				0x10
+#define	AFX_CONTROL_HP				0x20
+#define	AFX_ENABLED					0x40
 
-#define	VCF_CONTROL_POT				0x01
-#define	VCF_CONTROL_MIDI			0x02
-#define	VCF_CONTROL_CV				0x04
-#define	VCF_TYPE_LP					0x08
-#define	VCF_TYPE_BP					0x10
-#define	VCF_TYPE_HP					0x20
+#define	AFXTYPE_MOOG1				0x01
+#define	AFXTYPE_MOOG2				0x02
+#define	AFXTYPE_PHASER				0x04
+
 
 #define PARAMS_PROG_FLAG0       1
 #define PARAMS_PROG_FLAG1       2
 #define PARAMS_OSC_FLAGS        3
 #define PARAMS_CNTRL_FLAGS      4
 #define PARAMS_VCF_FLAGS        5
-#define PARAMS_EFFECT_FLAGS     6
+#define PARAMS_AFX_FLAGS        6
 #define PARAMS_DLY_FLAGS        7
 #define PARAMS_DLY_VAL          8
 #define PARAMS_OSC_WAVESH       9
@@ -107,21 +109,21 @@
 
 /*
 typedef struct _ProgramTypeDef
-{									// Flash offset		MIDI Packet offset
-    uint8_t 	program_flags0;		//	0				1
-    uint8_t 	program_flags1;		//	1				2
-    uint8_t 	oscillator_flags;	//	2				3
-    uint8_t 	control_flags;		//	3				4
-    uint8_t 	vcf_flags;			//	4				5
-    uint8_t 	effect_flags;		//	5				6
-    uint8_t 	delay_flags;		//	6 				7
-    uint8_t 	delay_value;		//	7 				8
-    uint8_t		osc_wavesh;			//	8 				9
-    uint8_t		osc_wavesl;			//	9 				10
-    uint8_t 	osc_duty_percent[4];//	10,11,12,13		11:14
-    uint8_t 	osc_detune[4];		//	14,15,16,17		15:18
-    uint8_t 	osc_volume[4];		//  18,19,20,21		19:22
-    uint8_t 	Atime,Dtime,Sval,Rtime;	// 22,23,24,25	23:26
+{											// Flash offset		MIDI Packet offset
+    uint8_t 	program_flags0;				//	0				1
+    uint8_t 	program_flags1;				//	1				2
+    uint8_t 	oscillator_flags;			//	2				3
+    uint8_t 	control_flags;				//	3				4
+    uint8_t 	vcf_flags;					//	4				5
+    uint8_t 	afxtype_flags;				//	5				6
+    uint8_t 	delay_flags;				//	6 				7
+    uint8_t 	delay_value;				//	7 				8
+    uint8_t		osc_wavesh;					//	8 				9
+    uint8_t		osc_wavesl;					//	9 				10
+    uint8_t 	osc_duty_percent[4];		//	10,11,12,13		11:14
+    uint8_t 	osc_detune[4];				//	14,15,16,17		15:18
+    uint8_t 	osc_volume[4];				//  18,19,20,21		19:22
+    uint8_t 	Atime,Dtime,Sval,Rtime;		//  22,23,24,25		23:26
 }ProgramTypeDef;
 */
 QT_BEGIN_NAMESPACE
@@ -148,6 +150,7 @@ public:
     void applyReceivedADSRParams(void);
     void applyReceivedOSCParams(void);
     void applyReceivedDelayParams(void);
+    void applyReceivedAFXParams(void);
     void send_control_change(int control_number, int value );
 private slots:
 
@@ -221,7 +224,7 @@ private slots:
 
     void on_DLY_Enable_checkBox_clicked(bool checked);
 
-    void on_VCF_Enable_checkBox_clicked(bool checked);
+    void on_AFX_Enable_checkBox_clicked(bool checked);
 
     void on_Flanger_radioButton_clicked(bool checked);
 
@@ -233,17 +236,23 @@ private slots:
 
     void on_Pot_radioButton_clicked(bool checked);
 
-    void on_VCF_Pot_radioButton_clicked(bool checked);
+    void on_AFX_Pot_radioButton_clicked(bool checked);
 
-    void on_VCF_MIDI_radioButton_clicked(bool checked);
+    void on_AFX_MIDI_radioButton_clicked(bool checked);
 
-    void on_VCF_CV_radioButton_clicked(bool checked);
+    void on_AFX_CV_radioButton_clicked(bool checked);
 
     void on_VCFLP_radioButton_clicked(bool checked);
 
     void on_VCFBP_radioButton_clicked(bool checked);
 
     void on_VCFHP_radioButton_clicked(bool checked);
+
+    void on_AFXMOOG1_radioButton_clicked(bool checked);
+
+    void on_AFXMOOG2_radioButton_clicked(bool checked);
+
+    void on_AFXPhaser_radioButton_clicked(bool checked);
 
 private:
     Ui::bB101_Midi_MainWindow *ui;

@@ -11,12 +11,12 @@ include(MidiLib/QMidi.pri)
 
 SOURCES += \
     adsr.cpp \
+    afx.cpp \
     delay.cpp \
     main.cpp \
     bb101_midi_mainwindow.cpp \
     program_manager.cpp \
     system.cpp \
-    vcf.cpp \
     waveforms.cpp
 
 HEADERS += \
